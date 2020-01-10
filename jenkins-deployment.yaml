@@ -16,4 +16,4 @@ spec:
       containers:
       - name: python-helloworld
         # Run this image
-        image: dockerhub-account/docker-repositoryname/test-image
+        image: dockerhub-account/docker-repositoryname:v1
