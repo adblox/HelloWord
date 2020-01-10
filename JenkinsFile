@@ -10,7 +10,7 @@ stages
 stage('Build Image')
 {
 steps{
-def testImage = docker.build("test-image", "./dockerfiles/test")
+def testImage = docker.build("test-image", "./dockerfiles/test")+${env.BUILD_NUMBER}
 }
 }
 stage('Deploying Image to Docker Registry')
