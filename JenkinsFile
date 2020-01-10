@@ -1,7 +1,7 @@
 pipeline {
 enviornment {
-  registry="docker-companyname/docker-test"
-  registryCredential = 'dockerhub'
+  registry="dockerhub-account/docker-repositoryname"
+  registryCredential = 'credentialsid' //Created in Jenkins with ID
   }
 agent {dockerfile true }
 }
@@ -17,7 +17,7 @@ stage('Deploying Image to Docker Registry')
 {
 steps{
 script{
-docker.withRegistry('',registryCredential){
+docker.withRegistry(registry,registryCredential){
 testImage.push()
 }
 }
