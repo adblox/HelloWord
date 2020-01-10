@@ -10,15 +10,24 @@ stages
 stage('Build Image')
 {
 steps{
-def testImage = docker.build("test-image", "./dockerfiles/test") +":$BUILD_NUMBER"
+def testImage = docker.build("test-image", "./dockerfiles/test")
 }
 }
-stage('Deploying Image to K8 cluster')
+stage('Deploying Image to Docker Registry')
 {
 steps{
 script{
 docker.withRegistry('',registryCredential){
 testImage.push()
+}
+}
+}
+stage('Deploy Image to K8 cluster')
+{
+steps{
+script{
+kubectl apply -f jenkins-deployment.yaml
+kubectl apply -f jenkins-service.yaml
 }
 }
 }
