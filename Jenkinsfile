@@ -8,6 +8,9 @@ stages
 {
 stage('Build Image')
 {
+  agent{
+    label 'master'
+  }
 steps{
   script{
 def testImage = docker.build registry + ":v1"
@@ -16,6 +19,9 @@ def testImage = docker.build registry + ":v1"
 }
 stage('Deploying Image to Docker Registry')
 {
+  agent{
+    label 'master'
+  }
 steps{
 script{
   docker.withRegistry("https://${registry_url}",'dockerhub-cicd-ashish'){
