@@ -1,7 +1,7 @@
 pipeline {
 enviornment {
-  registry="dockerhub-account/docker-repositoryname"
-  registryCredential = 'credentialsid' //Created in Jenkins with ID
+  registry="hub.docker.com/adua/test"
+  registryCredential = 'dockerhub-cicd-ashish' //Created in Jenkins with ID
   }
 agent {dockerfile true }
 }
