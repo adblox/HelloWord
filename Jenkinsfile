@@ -3,7 +3,7 @@ pipeline {
     label 'ubuntu_docker_label'
   }
 environment {
-  registry_url="hub.docker.com"
+  registry_url="https://hub.docker.com"
   registryCredential = 'dockerhub-cicd-ashish' //Created in Jenkins with ID
   }
 stages
@@ -12,7 +12,7 @@ stage('Build Image')
 {
   steps{
   script{
-    docker.withRegistry("https://${registry_url}",'dockerhub-cicd-ashish'){
+    docker.withRegistry("https://dockerhub.com,'dockerhub-cicd-ashish'){
 def testImage = 'make docker-build'
 }
   }
@@ -22,7 +22,7 @@ stage('Deploying Image to Docker Registry')
 {
 steps{
 script{
-  docker.withRegistry("https://${registry_url}",'dockerhub-cicd-ashish'){
+  docker.withRegistry("https://dockerhub.com,'dockerhub-cicd-ashish'){
 testImage.push()
 }
 }
