@@ -3,7 +3,7 @@ pipeline {
     label 'ubuntu_docker_label'
   }
 environment {
-  registry_url="hub.docker.com/adua/test"
+  registry_url="hub.docker.com"
   registryCredential = 'dockerhub-cicd-ashish' //Created in Jenkins with ID
   }
 stages
