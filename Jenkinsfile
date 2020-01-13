@@ -1,5 +1,7 @@
 pipeline {
-agent none
+  agent {
+    label 'master'
+  }
 environment {
   registry_url="hub.docker.com/adua/test"
   registryCredential = 'dockerhub-cicd-ashish' //Created in Jenkins with ID
