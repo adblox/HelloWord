@@ -9,7 +9,9 @@ stages
 stage('Build Image')
 {
 steps{
+  script{
 def testImage = docker.build registry + ":v1"
+}
 }
 }
 stage('Deploying Image to Docker Registry')
