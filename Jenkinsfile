@@ -42,4 +42,5 @@ withAWS(region:'S3 Region to where artifacts need to be uploaded',credentials:'A
 s3Upload(bucket:"yourBucketName", workingDir:'dist', includePathPattern:'**/*');
 }
 }
-};
+}
+}
