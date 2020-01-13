@@ -10,6 +10,7 @@ stages
 {
 stage('Build Image')
 {
+  agent{dockerfile true}
   steps{
   script{
 def testImage = docker.build registry + ":v1"
