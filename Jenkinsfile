@@ -9,7 +9,7 @@ stages
 stage('Build Image')
 {
   agent{
-    label 'master'
+    dockerfile true
   }
 steps{
   script{
