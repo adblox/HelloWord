@@ -1,5 +1,4 @@
 FROM openjdk
-ADD HelloWorld.java /
 RUN javac HelloWorld.java
 RUN jar -cvf HelloWorld.java HelloWorld.class
 RUN jar -cvf HelloWorld.java HelloWorld.class
