@@ -6,6 +6,12 @@ environment {
   }
 stages
 {
+stage('Docker login')
+  {
+    script{
+      withDockerRegistry([credentialsId: 'dockerhub-cicd-ashish', url: 'hub.docker.com/adua']) {
+      }
+    }
 stage('Build Image')
 {
 steps{
