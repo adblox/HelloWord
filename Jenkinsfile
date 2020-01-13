@@ -12,8 +12,10 @@ stage('Build Image')
 {
   steps{
   script{
+    docker.withRegistry("https://${registry_url}",'dockerhub-cicd-ashish'){
 def testImage = 'make docker-build'
 }
+  }
 }
 }
 stage('Deploying Image to Docker Registry')
