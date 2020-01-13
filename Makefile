@@ -6,7 +6,7 @@ IMAGE		:= $(IMAGE_NAME):$(IMAGE_TAG)
 docker: docker-build docker-push
 
 docker-build:
-	docker build -t Dockerfile .
+	docker build .
 
 docker-push:
 	docker push $(IMAGE)
