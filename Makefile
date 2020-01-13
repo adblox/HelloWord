@@ -1,7 +1,7 @@
 IMAGE_DEPS	:= Dockerfile .
 IMAGE_NAME	:= adblox/test
 IMAGE_TAG	:= $(shell git describe --long --tags --match=v0.0.0 `git diff -s --exit-code $(IMAGE_DEPS) && git log -n 1 --pretty=format:%h -- $(IMAGE_DEPS) || echo '--dirty'`)
-IMAGE		:= $(IMAGE_NAME):$(IMAGE_TAG)
+IMAGE		:= $(IMAGE_NAME):v1
 
 docker: docker-build docker-push
 
