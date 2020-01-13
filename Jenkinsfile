@@ -10,20 +10,15 @@ stages
 {
 stage('Build Image')
 {
-  agent{
-      dockerfile true
-  }
-steps{
+  steps{
   script{
 def testImage = docker.build registry + ":v1"
+ docker build -t .
 }
 }
 }
 stage('Deploying Image to Docker Registry')
 {
-  agent{
-    dockerfile true
-  }
 steps{
 script{
   docker.withRegistry("https://${registry_url}",'dockerhub-cicd-ashish'){
