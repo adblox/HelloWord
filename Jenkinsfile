@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'master'
+    label 'ubuntu_docker_label'
   }
 environment {
   registry_url="hub.docker.com/adua/test"
@@ -10,10 +10,9 @@ stages
 {
 stage('Build Image')
 {
-  agent{dockerfile true}
   steps{
   script{
-def testImage = docker.build registry + ":v1"
+def testImage = make docker-build
 }
 }
 }
