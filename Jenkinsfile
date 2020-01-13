@@ -14,7 +14,7 @@ stage('Build Image')
   script{
     image = sh(script='make docker-build')
       withDockerRegistry([credentialsId: "dockerhub-cicd-ashish", url: ""]) {
-        sh 'image.push()'
+        image.push()
 }
 }
 }
