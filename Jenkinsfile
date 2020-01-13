@@ -13,7 +13,6 @@ stage('Build Image')
   steps{
   script{
 def testImage = docker.build registry + ":v1"
- docker build -t .
 }
 }
 }
