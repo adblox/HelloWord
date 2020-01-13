@@ -11,7 +11,7 @@ stages
 stage('Build Image')
 {
   agent{
-    dockerfile true
+    label 'master',dockerfile true
   }
 steps{
   script{
@@ -22,7 +22,7 @@ def testImage = docker.build registry + ":v1"
 stage('Deploying Image to Docker Registry')
 {
   agent{
-    dockerfile true
+    label 'master',dockerfile true
   }
 steps{
 script{
