@@ -39,7 +39,6 @@ dir('/Path to jenkins job artifact or path to Project workspace')
 
 withAWS(region:'S3 Region to where artifacts need to be uploaded',credentials:'AWS Credentials created where EC2 instance for Jenkins server resides')
 {
-Workding directory is from where artifacts need to be uploaded:- It should be path to particual Jenkins build to get artifacts from)
 s3Upload(bucket:"yourBucketName", workingDir:'dist', includePathPattern:'**/*');
 }
 }
