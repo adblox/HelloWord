@@ -12,7 +12,7 @@ stage('Build Image')
 {
   steps{
   script{
-    docker.withRegistry("https://hub.docker.com",'dockerhub-cicd-ashish'){
+    withDockerRegistry([credentialsId: "dockerhub-cicd-ashish", url: ""]) {
 def testImage = 'make docker-build'
 }
   }
@@ -22,7 +22,7 @@ stage('Deploying Image to Docker Registry')
 {
 steps{
 script{
-  docker.withRegistry("https://hub.docker.com",'dockerhub-cicd-ashish'){
+  withDockerRegistry([credentialsId: "dockerhub-cicd-ashish", url: ""]) {
 testImage.push()
 }
 }
