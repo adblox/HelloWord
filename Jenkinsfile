@@ -34,6 +34,13 @@ testImage.push()
 }
 stage('Deploy Image to K8 cluster')
 {
+  agent {
+    kubernetes {
+      label 'promo-app'  // all your pods will be named with this prefix, followed by a unique id
+      idleMinutes 5  // how long the pod will live after no jobs have run on it
+      yamlFile 'jenkins-deployment.yaml'  // path to the pod definition relative to the root of our project 
+      }
+  }
 steps{
 script{
 kubectl apply -f jenkins-deployment.yaml
