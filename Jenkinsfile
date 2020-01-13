@@ -12,7 +12,7 @@ stage('Build Image')
 {
   steps{
   script{
-def testImage = make docker-build
+def testImage = 'make docker-build'
 }
 }
 }
