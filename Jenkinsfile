@@ -1,6 +1,6 @@
 pipeline {
 agent {dockerfile true }
-enviornment {
+environment {
   registry="hub.docker.com/adua/test"
   registryCredential = 'dockerhub-cicd-ashish' //Created in Jenkins with ID
   }
