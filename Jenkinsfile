@@ -16,13 +16,9 @@ stage('Build Image')
       }
       withDockerRegistry([credentialsId: "dockerhub-cicd-ashish", url: ""]) {
         sh 'image.push()'
-      }
+}
+}
 
-testImage.push()
-}
-}
-}
-}
 stage('Deploy Image to K8 cluster')
 {
 steps{
