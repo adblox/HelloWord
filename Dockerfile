@@ -1,3 +1,6 @@
-FROM python:3
-ADD hello_world.py /
-CMD ["python","./hello_world.py"]
+FROM openjdk
+ADD HelloWorld.java /
+RUN javac HelloWorld.java
+RUN jar -cvf HelloWorld.java HelloWorld.class
+RUN jar -cvf HelloWorld.java HelloWorld.class
+RUN java -cp HelloWorld.jar HelloWorld
