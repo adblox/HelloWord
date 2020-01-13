@@ -4,7 +4,7 @@ enviornment {
   registryCredential = 'dockerhub-cicd-ashish' //Created in Jenkins with ID
   }
 agent {dockerfile true }
-}
+
 stages
 {
 stage('Build Image')
