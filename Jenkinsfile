@@ -13,6 +13,7 @@ stage('Build Image')
   agent{dockerfile true}
   steps{
   script{
+    apt-get -y install docker-ce
 def testImage = docker.build registry + ":v1"
 }
 }
