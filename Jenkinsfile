@@ -1,17 +1,11 @@
 pipeline {
 agent {dockerfile true }
 environment {
-  registry="hub.docker.com/adua/test"
+  registry_url="hub.docker.com/adua/test"
   registryCredential = 'dockerhub-cicd-ashish' //Created in Jenkins with ID
   }
 stages
 {
-stage('Docker login')
-  {
-    script{
-      withDockerRegistry([credentialsId: 'dockerhub-cicd-ashish', url: 'hub.docker.com/adua']) {
-      }
-    }
 stage('Build Image')
 {
 steps{
@@ -24,7 +18,7 @@ stage('Deploying Image to Docker Registry')
 {
 steps{
 script{
-docker.withRegistry(registry,registryCredential){
+  docker.withRegistry("https://${registry_url}",'dockerhub-cicd-ashish'){
 testImage.push()
 }
 }
