@@ -16,6 +16,7 @@ def testImage = docker.build registry + ":v1"
  docker build -t .
 }
 }
+}
 stage('Deploying Image to Docker Registry')
 {
 steps{
