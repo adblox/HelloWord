@@ -18,7 +18,7 @@ stage('Build Image')
         sh 'image.push()'
 }
 }
-
+}
 stage('Deploy Image to K8 cluster')
 {
 steps{
