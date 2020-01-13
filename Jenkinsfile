@@ -42,4 +42,4 @@ s3Upload(bucket:"yourBucketName", workingDir:'dist', includePathPattern:'**/*');
 }
 }
 }
-
+}
