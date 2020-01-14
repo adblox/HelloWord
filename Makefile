@@ -8,8 +8,7 @@ docker: docker-build docker-push
 docker-build:
 	docker build -t $(IMAGE) .
 
-docker-login:
-        docker login -u $(DOCKER_USERNAME) -P $(DOCKER_PASSWORD)
+docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 
 docker-push:
 	docker push $(IMAGE)
