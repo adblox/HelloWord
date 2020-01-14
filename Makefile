@@ -1,4 +1,4 @@
-IMAGE_NAME	:= adua/spinnaker-test
+IMAGE_NAME	:= adua/hello_world
 IMAGE		:= $(IMAGE_NAME):v1
 DOCKER_USERNAME := adua
 DOCKER_PASSWORD := A_delta@1234567!
