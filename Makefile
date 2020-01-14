@@ -1,7 +1,7 @@
 IMAGE_NAME	:= adblox/test
 IMAGE		:= $(IMAGE_NAME):v1
-DOCKER_USERNAME :=adua
-DOCKER_PASSWORD :=a_DELTA@1234567!
+DOCKER_USERNAME := adua
+DOCKER_PASSWORD := A_delta@1234567!
 
 docker: docker-build docker-push
 
