@@ -10,8 +10,10 @@ docker-build:
 
 docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 
+docker-tag:	docker tag $(IMAGE) adua/dockerhub::$(IMAGE)
+
 docker-push:
-	docker push adua/$(IMAGE)
+	docker push $(IMAGE)
 docker-pull-or-build:
 	docker pull $(IMAGE) \
 	|| docker image inspect $(IMAGE) > /dev/null \
