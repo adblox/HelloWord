@@ -13,7 +13,7 @@ stage('Build Image')
   steps{
   script{
     image = sh 'make docker-build'
-      withDockerRegistry([credentialsId: "dockerhub-cicd-ashish", url: ""]) {
+      withDockerRegistry([credentialsId: "dockerhub-cicd-ashish", url: "docker.io"]) {
         sh 'make docker-pull-or-push'
 }
 }
