@@ -11,7 +11,7 @@ docker-build:
 docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 
 docker-push:
-	docker push adua/$(IMAGE)
+	docker push adua/$(IMAGE):v1
 
 docker-pull-or-build:
 	docker pull $(IMAGE) \
