@@ -1,5 +1,5 @@
 IMAGE_NAME	:= hello_world
-IMAGE		:= hello_world:v1
+IMAGE		:= $(IMAGE_NAME):v1
 DOCKER_USERNAME := adua
 DOCKER_PASSWORD := A_delta@1234567!
 
@@ -11,7 +11,7 @@ docker-build:
 docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 
 docker-push:
-	docker push adua/spinnaker-test/$(IMAGE)
+	docker push $(IMAGE)
 
 docker-pull-or-build:
 	docker pull $(IMAGE) \
