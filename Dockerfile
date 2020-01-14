@@ -3,5 +3,4 @@ WORKDIR /tmp
 ADD HelloWorld.java /tmp
 RUN javac HelloWorld.java
 RUN jar -cvf HelloWorld.java HelloWorld.class
-RUN jar -cvf HelloWorld.java HelloWorld.class
-RUN java -jar HelloWorld.java
+ENTRYPOINT ["/bin/bash","java","-jar","HelloWorld.java"]
