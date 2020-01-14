@@ -10,7 +10,7 @@ docker-build:
 
 docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 
-docker-tag:	docker tag $(IMAGE_NAME) adua/spinnaker-test/$(IMAGE_NAME)
+docker-tag:	docker tag $(IMAGE) adua/spinnaker-test/$(IMAGE)
 
 docker-push:
 	docker push adua/spinnaker-test/$(IMAGE)
