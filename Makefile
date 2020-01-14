@@ -11,7 +11,7 @@ docker-build:
 docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 
 docker-push:
-	docker push $(IMAGE)
+	docker push docker.io/adua/spinnaker-test/$(IMAGE)
 docker-pull-or-build:
 	docker pull $(IMAGE) \
 	|| docker image inspect $(IMAGE) > /dev/null \
