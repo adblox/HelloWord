@@ -6,11 +6,9 @@ DOCKER_PASSWORD := A_delta@1234567!
 docker: docker-build docker-push
 
 docker-build:
-	docker build -t adua/$(IMAGE) .
+	docker build -t docker.io/adua/spinnaker-test/$(IMAGE) .
 
 docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
-
-docker-tag:	docker tag $(IMAGE) docker.io/adua/spinnaker-test/$(IMAGE)
 
 docker-push:
 	docker push $(IMAGE)
