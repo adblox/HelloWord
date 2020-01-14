@@ -7,7 +7,7 @@ docker-build:
 	docker build -t $(IMAGE) .
 
 docker-push:
-	docker push $(IMAGE)
+	docker push $(IMAGE) || make docker
 
 docker-pull-or-build:
 	docker pull $(IMAGE) \
