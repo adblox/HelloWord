@@ -1,4 +1,4 @@
-IMAGE_NAME	:= adua/hello_world
+IMAGE_NAME	:= hello_world
 IMAGE		:= $(IMAGE_NAME):v1
 DOCKER_USERNAME := adua
 DOCKER_PASSWORD := A_delta@1234567!
@@ -10,8 +10,10 @@ docker-build:
 
 docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 
+docker-tag:	docker tag $(IMAGE_NAME) adua/$(IMAGE_NAME)
+
 docker-push:
-	docker push $(IMAGE)
+	docker push adua/$(IMAGE)
 
 docker-pull-or-build:
 	docker pull $(IMAGE) \
