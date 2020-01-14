@@ -1,5 +1,5 @@
 IMAGE_NAME	:= hello_world
-IMAGE		:= $(IMAGE_NAME):v1
+IMAGE		:= hello_world:v1
 DOCKER_USERNAME := adua
 DOCKER_PASSWORD := A_delta@1234567!
 
