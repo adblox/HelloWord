@@ -6,12 +6,12 @@ DOCKER_PASSWORD := A_delta@1234567!
 docker: docker-build docker-push
 
 docker-build:
-	docker build -t $(IMAGE) .
+	docker build -t adua/$(IMAGE) .
 
 docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
 
 docker-push:
-	docker push $(IMAGE)
+	docker push adua/$(IMAGE)
 
 docker-pull-or-build:
 	docker pull $(IMAGE) \
