@@ -6,12 +6,12 @@ DOCKER_PASSWORD := A_delta@1234567!
 docker: docker-build docker-push
 
 docker-build:
-	docker build -t adua/test:v1 .
+	docker build -t adua/spinnaker-test:v1 .
 
 docker-login:	docker login --username $(DOCKER_USERNAME) --password $(DOCKER_PASSWORD) --email adua@infoblox.com
 
 docker-push:
-	docker push adua/test:v1
+	docker push adua/spinnaker-test:v1
 docker-pull-or-build:
 	docker pull $(IMAGE) \
 	|| docker image inspect $(IMAGE) > /dev/null \
