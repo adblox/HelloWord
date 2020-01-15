@@ -18,7 +18,7 @@ docker-pull-or-build:
 	|| make docker-build
 
 docker-pull-or-push:
-	docker push $(IMAGE) || make docker
+	docker push $(IMAGE)
 
 docker-show-version:
 	@echo -n $(IMAGE)
