@@ -23,8 +23,7 @@ stage('Deploy Image to K8 cluster')
 {
 steps{
 script{
-kubectl apply -f jenkins-deployment.yaml
-kubectl apply -f jenkins-service.yaml
+sh 'make '
 }
 }
 }
