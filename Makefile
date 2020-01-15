@@ -6,7 +6,7 @@ DOCKER_PASSWORD := A_delta@1234567!
 docker: docker-build docker-push
 
 docker-build:
-	docker build -t adua/test:v1
+	docker build -t adua/test:v1 .
 
 docker-logout:	docker logout
 docker-login:	docker login --username adua --password A_delta@1234567! --email adua@infoblox.com
