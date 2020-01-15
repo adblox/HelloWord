@@ -13,7 +13,7 @@ docker-push:
 
 kubectl-deploy:	kubectl apply -f jenkins-deployment.yaml
 
-kubectl-service:kubectl apply -f jenkins-service.yaml
+kubectl-service:	kubectl apply -f jenkins-service.yaml
 
 docker-show-version:
 	@echo -n $(IMAGE)
