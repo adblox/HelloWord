@@ -26,7 +26,7 @@ stage('Deploy Docker Image')
       {
         sh 'docker swarm leave'
         sh 'docker swarm init'
-        sh 'docker swarm join --token SWMTKN-1-4okh90bf9u502mxx6jct4a6b0qtgdeg1anyv56hn8bzwlrbhmm-274tx2g5pz375w2hkvwyk2ngu 172.28.22.145:2377'
+        sh 'docker swarm join --listen-addr 0.0.0.0:2377 172.28.22.145:2377'
         sh 'docker service create --name hello_world --publish published=80,target=8080 adua/test:v1'
       }
     }
