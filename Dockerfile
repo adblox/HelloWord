@@ -1,5 +1,7 @@
-FROM python:3
+FROM openjdk
 WORKDIR /tmp
-ADD HelloWorld.py /tmp
+ADD HelloWorld.java /tmp
 EXPOSE 8080
-ENTRYPOINT ["/usr/bin/python","HelloWorld.py"]
+RUN javac HelloWorld.java
+RUN jar -cvf HelloWorld.java HelloWorld.class
+ENTRYPOINT ["/usr/bin/java","HelloWorld.java"]
