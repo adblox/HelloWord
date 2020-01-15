@@ -11,9 +11,9 @@ docker-build:
 docker-push:
 	docker push adua/test:v1
 
-kubectl-deploy:	kubectl apply -f jenkins-deployment.yaml
+kubectl-deploy:	kubectl apply -f jenkins-deployment.yaml || make kubectl
 
-kubectl-service:	kubectl apply -f jenkins-service.yaml
+kubectl-service:	kubectl apply -f jenkins-service.yaml || make kubectl
 
 docker-show-version:
 	@echo -n $(IMAGE)
