@@ -19,7 +19,15 @@ stage('Build Image')
 }
 }
 }
-
+stage('Deploy Docker Image')
+  {
+    steps{
+      script
+      {
+        sh 'docker service create --name hello_world --publish published=80,target=8080 adua/test:v1'
+      }
+    }
+  }
 stage('Upload Artifact to s3 Bucket')
 {
 steps{
