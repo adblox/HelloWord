@@ -25,8 +25,9 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker run -p 80:80 --name hello-test4-java adua/test /usr/bin/java HelloWorld.java'
-        container_ip=sh 'docker inspect --format "{{ .NetworkSettings.IPAddress }}" hello-test4-java'
+        sh 'docker network create java-network3'
+        sh 'docker run -p 80:80 --net java-network3 --name hello-test5-java adua/test /usr/bin/java HelloWorld.java'
+        container_ip=sh 'docker inspect --format "{{ .NetworkSettings.IPAddress }}" hello-test5-java'
         
       }
     }
