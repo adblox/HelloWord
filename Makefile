@@ -8,7 +8,7 @@ docker: docker-build docker-push
 docker-build:
 	docker build -t test/$(IMAGE) .
 
-docker-login:	docker login --username $(DOCKER_USERNAME) --password $(DOCKER_PASSWORD) --email adua@infoblox.com
+docker-login:	docker login --username $(DOCKER_USERNAME) --password $(DOCKER_PASSWORD)
 
 docker-push:
 	docker push test/$(IMAGE)
