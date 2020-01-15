@@ -13,8 +13,8 @@ stage('Build Image')
   steps{
   script{
     image = sh 'make docker-build'
-   sh 'make docker-login'  
    sh 'make docker-tag'
+   sh 'make docker-login'
    sh 'make docker-pull-or-push'
 
 }
