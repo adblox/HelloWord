@@ -24,7 +24,6 @@ stage('Deploy Docker Image')
     steps{
       script
       {
-        sh 'docker swarm leave'
         sh 'docker swarm init'
         sh 'docker swarm join --listen-addr 0.0.0.0:2377 172.28.22.145:2377'
         sh 'docker service create --name hello_world --publish published=80,target=8080 adua/test:v1'
