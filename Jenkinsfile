@@ -24,7 +24,6 @@ stage('Deploy Docker Image')
     steps{
       script
       {
-        sh 'docker swarm init'
         sh 'docker service create --name hello_world --publish published=80,target=8080 adua/test:v1'
       }
     }
