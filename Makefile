@@ -8,7 +8,7 @@ docker: docker-build docker-push
 docker-build:
 	docker build -t adua/spinnaker-test/$(IMAGE) .
 
-docker-login:	docker login --username adua --password A_delta@1234567! --email docker@docker.com
+docker-login: docker login --username adua --password A_delta@1234567! --email adua@infoblox.com
 
 docker-push:
 	docker push adua/spinnaker-test/$(IMAGE)
