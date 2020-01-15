@@ -25,7 +25,7 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker network create --subnet=192.168.0.0/16 my'
+        sh 'docker network create --subnet=192.168.24.10/26 my'
         sh 'docker run -p 8080:8080 --name test7 adua/test /usr/bin/java HelloWorld.java'
         sh 'docker network connect my test7'
         container_ip=sh 'docker inspect test7|grep "IPAddress"'
