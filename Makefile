@@ -8,7 +8,7 @@ docker: docker-build docker-push
 docker-build:
 	docker build -t docker.io/adua/spinnaker-test/$(IMAGE) .
 
-docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
+docker-login:	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD) docker.io
 
 docker-push:
 	docker push docker.io/adua/spinnaker-test/$(IMAGE)
