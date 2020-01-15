@@ -25,8 +25,9 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker run -p 8080:8080 --name test1 adua/test /usr/bin/java HelloWorld.java'
-        container_ip=sh 'docker inspect test1|grep "IPAddress"'
+        sh 'ifconfig eth0:1 10.0.0.11 netmask 255.255.255.0 up'
+        sh 'docker run -p 10.0.0.11:8000:8000 --name test2 /usr/bin/java HelloWorld.java'
+       
       }
     }
   }
