@@ -23,7 +23,8 @@ stage('Deploy Image to K8 cluster')
 {
 steps{
 script{
-sh 'make '
+sh 'make kubectl-apply'
+sh 'make kubectl-service'
 }
 }
 }
