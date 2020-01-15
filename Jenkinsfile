@@ -13,8 +13,7 @@ stage('Build Image')
   steps{
   script{
     image = sh 'make docker-build'
-   sh 'make docker-logout'
-   sh 'make docker-login'
+   sh 'docker login --username adua --password A_delta@1234567! --email adua@infoblox.com'
    sh 'make docker-pull-or-push'
 
 }
