@@ -8,7 +8,7 @@ docker: docker-build docker-push
 docker-build:
 	docker build -t spinnaker-test:v1 .
 
-docker-login:	docker login --username $(DOCKER_USERNAME) --password $(DOCKER_PASSWORD) --email adua@infoblox.com
+docker-login:	docker login --username $(DOCKER_USERNAME) --password $(DOCKER_PASSWORD) registry-1.docker.io
 
 docker-push:
 	docker push spinnaker-test:v1
