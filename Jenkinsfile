@@ -19,15 +19,7 @@ stage('Build Image')
 }
 }
 }
-stage('Deploy Image to K8 cluster')
-{
-steps{
-script{
-sh 'make kubectl-deploy'
-sh 'make kubectl-service'
-}
-}
-}
+
 stage('Upload Artifact to s3 Bucket')
 {
 steps{
