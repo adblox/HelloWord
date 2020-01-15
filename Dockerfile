@@ -1,7 +1,6 @@
-FROM openjdk
+FROM ubuntu:16.04
 WORKDIR /tmp
-ADD HelloWorld.java /tmp
+ADD HelloWorld.py /tmp
 EXPOSE 8080
-RUN javac HelloWorld.java
-RUN jar -cvf HelloWorld.java HelloWorld.class
-ENTRYPOINT ["/usr/bin/java","HelloWorld.java"]
+ENTRYPOINT ["python3"]
+CMD[ "HelloWorld.py" ]
