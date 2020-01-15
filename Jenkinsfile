@@ -25,7 +25,7 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker service create --name hello_world --publish published=8080,target=8080 adua/test:v1'
+        sh 'docker service create --name hello-world --publish published=8080,target=8080 adua/test:v1'
       }
     }
   }
