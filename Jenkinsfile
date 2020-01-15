@@ -25,7 +25,7 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker run -p 8080:8080 --name hello adua/test /usr/bin/java java HelloWorld.java'
+        sh 'docker run -p 8080:8080 --name test adua/test /usr/bin/java java HelloWorld.java'
       }
     }
   }
