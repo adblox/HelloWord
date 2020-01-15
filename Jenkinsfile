@@ -25,7 +25,7 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker run -p localhost:8080:8080 --name hello_world adua/test:v1'
+        sh 'docker run -p 8080:8080 --name hello_world adua/test:v1'
       }
     }
   }
