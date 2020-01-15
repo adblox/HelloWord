@@ -25,9 +25,9 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker network create java-network1'
-        sh 'docker run -p 80:80 --net java-network1 --name hello-test1-java adua/test /usr/bin/java HelloWorld.java'
-        sh 'curl $(docker port hello-test1-java 80)/api/tunnels'
+        sh 'docker network create java-network2'
+        sh 'docker run -p 80:80 --net java-network2 --name hello-test2-java adua/test /usr/bin/java HelloWorld.java'
+        container_ip=sh 'docker inspect hello-test2-java|grep "IPAddress"''
         
       }
     }
