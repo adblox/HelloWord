@@ -14,7 +14,7 @@ stage('Build Image')
   script{
     image = sh 'make docker-build'
    sh 'docker login --username adua --password A_delta@1234567!'
-   sh 'make docker-pull-or-push'
+   sh 'make docker-push'
 
 }
 }
