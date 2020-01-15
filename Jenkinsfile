@@ -25,9 +25,9 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'ifconfig eth0:1 10.0.0.11 netmask 255.255.255.0 up'
-        sh 'docker run -p 10.0.0.11:8000:8000 --name test2 /usr/bin/java HelloWorld.java'
-       
+        sh 'docker network create -d overlay my-multihost-network'
+        sh 'docker run -p 8080:8080 --network my-multihost-network --name test2 adua/test /usr/bin/java HelloWorld.java'
+        container_ip=sh 'docker inspect test2|grep "IPAddress"'
       }
     }
   }
