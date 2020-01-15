@@ -25,9 +25,9 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker network create java-net'
-        sh 'docker run -it -p 3030:8080 --net java-net --name hello-test-python adua/test /bin/bash'
-        container_ip=sh 'docker inspect --format "{{ .NetworkSettings.IPAddress }}" hello-test-python'
+        sh 'docker network create java-net1'
+        sh 'docker run -it -p 3030:8080 --net java-net1 --name hello-test1-python adua/test /usr/bin/python HelloWorld.py'
+        container_ip=sh 'docker inspect --format "{{ .NetworkSettings.IPAddress }}" hello-test1-python'
         
       }
     }
