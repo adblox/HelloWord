@@ -25,6 +25,7 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
+        sh 'docker swarm init'
         sh 'docker service create --name helloworld adua/test:v1 /usr/bin/python HelloWorld.py'
         
         
