@@ -25,7 +25,6 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'sudo apt install -y docker-compose'
         sh 'docker-compose up'
         
       }
