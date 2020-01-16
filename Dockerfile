@@ -1,6 +1,8 @@
-FROM ubuntu:16.04
+FROM python:3
 WORKDIR /tmp
 ADD HelloWorld.py /tmp
-EXPOSE 8080
+RUN pip install flask
+RUN pip install flask_restful
+EXPOSE 3333
 ENTRYPOINT ["python3"]
-CMD ["HelloWorld.py"]
+CMD ["python","./HelloWorld.py"]
