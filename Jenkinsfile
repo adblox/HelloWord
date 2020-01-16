@@ -26,6 +26,8 @@ stage('Deploy Docker Image')
       {
         sh 'docker pull adua/test:v1'
         sh 'docker-compose up'
+        sh 'docker swarm init'
+        sh 'docker stack deploy -c docker-compose.yml test-python'
        }
     }
   }
