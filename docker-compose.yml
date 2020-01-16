@@ -6,7 +6,7 @@ services:
       - "8080:8080"
   nginx:
     restart: always
-    build: ./nginx/
+    image: nginx
     ports:
     - "80:80"
     links:
