@@ -4,4 +4,9 @@ services:
     image: adua/test:v1
     ports:
       - "8080:8080"
+    networks:
+      - frontend
+networks:
+  frontend:
+    driver: overlay
   
