@@ -8,6 +8,5 @@ services:
       - frontend
 networks:
   frontend:
-    name: test
     driver: overlay
   
