@@ -25,7 +25,7 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker swarm init'
+        sh 'docker-compose up'
         
       }
     }
