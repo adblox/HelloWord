@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'ubuntu_docker_minikube_label'
+    label 'ubuntu_docker_label'
   }
 environment {
   registry_url="https://hub.docker.com"
