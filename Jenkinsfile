@@ -25,7 +25,7 @@ stage('Deploy Docker Image')
       script
       {
         sh 'docker pull adua/test:v1'
-        sh 'docker run -d -p 3333:3333 --name "test3" adua/test:v1'
+        sh 'docker run -it -p 3333:3333 --name "test4" adua/test:v1'
         
         
       }
